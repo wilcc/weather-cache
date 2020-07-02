@@ -4,16 +4,25 @@
         <title>Project For Code Immersives</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./style.css" rel="stylesheet" type="text/css">
+        <link href="/public/stylesheets/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <% if(weather){%>
-            <div class="card">
-                <div class="container">
-                  <p><weather.data.daily.data</p>
-                </div>
-              </div>
-    
-            <%}%> 
+
+        <% if(weather){weather.forEach(item=>{%>
+            Date:
+            <%= item.time %> <br />
+            Summary Of the day:
+        <%= item.summary %> <br />
+            Sunrise:
+        <%= item.sunriseTime %> <br />
+            Sunset:
+        <%= item.sunsetTime %> <br />
+            Hi Temp:
+        <%= item.temperatureHigh %> <br />
+            Low Temp:
+        <%= item.temperatureLow %> <br />
+            <br/>
+        <%})}%>
+
     </body>
 </html>
